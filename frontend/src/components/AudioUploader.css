@@ -1,0 +1,266 @@
+/* Overall Page Styling */
+/* Renamed to a specific wrapper for the whole page */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This centers both the header and the main container */
+  padding: 20px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2f3, #dfe9f3);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Header Section */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px; /* Ensures the header matches the width of the main box */
+  margin-bottom: 20px;
+}
+
+.page-header h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: 0.2s;
+  color: black;
+}
+
+.back-btn:hover {
+  background: #e2e2e2;
+}
+
+/* Main Container */
+.audio-container {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 800px; /* The main box size */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+/* Upload and Record Sections */
+.upload-section,
+.record-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.file-upload {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 2px dashed #007bff;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #f0f8ff;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.file-upload:hover {
+  background: #e2f0ff;
+}
+
+.file-name {
+  margin-top: 10px;
+  font-style: italic;
+  color: #555;
+}
+
+.record-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.record-btn.start {
+  background: #28a745;
+}
+
+.record-btn.start:hover {
+  background: #218838;
+}
+
+.record-btn.stop {
+  background: #dc3545;
+}
+
+.record-btn.stop:hover {
+  background: #b02a37;
+}
+
+.recording-active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #555;
+}
+
+/* Audio Preview */
+.audio-preview {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.audio-preview h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.audio-preview audio {
+  width: 100%;
+  outline: none;
+}
+
+/* Language Selectors */
+.lang-selectors {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.lang-selectors div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.lang-selectors label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.lang-selectors select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s;
+  min-width: 120px;
+}
+
+.lang-selectors select:focus {
+  border-color: #007bff;
+}
+
+/* Translate Button */
+.translate-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.translate-btn:hover {
+  background: #0056b3;
+}
+
+.translate-btn:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Loading Spinner */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #007bff;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Results Section */
+.result-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.result-section h3 {
+  font-size: 1.2rem;
+  color: #333;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+}
+
+.result-box {
+  background: #f1f5f9;
+  border-left: 4px solid #007bff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

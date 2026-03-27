@@ -1,0 +1,204 @@
+/* Page Wrapper for Centering */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2f3, #dfe9f3);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Page Header */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+.page-header h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: 0.2s;
+  color: black;
+}
+
+.back-btn:hover {
+  background: #e2e2e2;
+}
+
+/* Main Translation Container */
+.text-container {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+/* Text Area Input */
+.text-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Language Controls */
+.lang-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.lang-controls div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.lang-controls label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.lang-controls select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s;
+  min-width: 120px;
+}
+
+.lang-controls select:focus {
+  border-color: #007bff;
+}
+
+.swap-btn {
+  background: #555;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+  align-self: flex-end; /* Align the swap button to the bottom of the language selectors */
+  margin-bottom: 8px; /* Adjust spacing */
+}
+
+.swap-btn:hover {
+  background: #333;
+}
+
+/* Translate Button */
+.translate-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.translate-btn:hover {
+  background: #0056b3;
+}
+
+.translate-btn:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Loading Spinner */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #007bff;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Result Section */
+.result-section {
+  background: #eef6ff;
+  border-left: 4px solid #007bff;
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+
+.result-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.result-box {
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

@@ -1,0 +1,148 @@
+/* src/components/LiveVideoCaption.css */
+.live-caption-container {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.error-banner {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.controls {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  font-weight: 600;
+}
+
+.btn-start-cam { background-color: #007bff; color: white; }
+.btn-stop-cam { background-color: #6c757d; color: white; }
+.btn-start-rec { background-color: #28a745; color: white; } 
+.btn-recording { background-color: #dc3545; color: white; animation: pulse 1.5s infinite; }
+
+.btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Video Wrapper - Enforces Aspect Ratio and Contains Overlay */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  /* 16:9 Aspect Ratio (56.25% of width) for standard video feel */
+  padding-top: 56.25%; 
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.video-feed, .video-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #000;
+}
+
+.video-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ddd;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+/* Caption Overlay Styling (Matches Your Screenshot) */
+.caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 60px;
+  background-color: rgba(0, 0, 0, 0.85); /* Darker black for visibility */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.caption-overlay p {
+  color: white;
+  font-size: 1.6rem; 
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+  word-wrap: break-word;
+}
+
+/* Transcript Box */
+.transcript-box {
+  margin-top: 25px;
+  text-align: left;
+  background: #f4f4f4;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.transcript-box h3 {
+  font-size: 1.2rem;
+  padding: 10px 15px;
+  color: #007bff;
+  margin: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.transcript-content {
+  padding: 15px;
+  min-height: 120px;
+  max-height: 250px;
+  overflow-y: auto;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.6;
+  white-space: pre-wrap; /* Allows text wrapping */
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); box-shadow: 0 0 8px #dc3545; }
+  100% { transform: scale(1); }
+}
