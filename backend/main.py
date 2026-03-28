@@ -13,7 +13,7 @@ from services.deepgram_stt import transcribe_audio
 from services.translate import translate_text
 from services.tts import text_to_speech
 from services.sts import speech_to_speech
-from services.slASL.inference import predict_sign
+#from services.slASL.inference import predict_sign
 import tempfile
 #from backend.services.sign_language.inference import predict_sign # <-- New import'
 import shutil
@@ -151,8 +151,9 @@ async def process_sign_video(files: list[UploadFile] = Form(...), source_lang: s
         "translation": translated_text
     }
 '''
-
+'''
 @app.post("/predict-sign")
 async def predict_sign_endpoint(file: UploadFile = File(...)):
     result = predict_sign(file)
     return result
+    '''
