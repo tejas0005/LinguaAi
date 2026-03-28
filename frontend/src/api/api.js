@@ -1,3 +1,5 @@
+const API = process.env.REACT_APP_API_URL;
+/*
 export const processAudio = async (file, sourceLang, targetLang) => {
   const formData = new FormData();
   formData.append("file", file);
@@ -57,7 +59,7 @@ export const processSTS = async (file, sourceLang = "en", targetLang = "fr") => 
 
   return await response.json(); // ✅ return JSON with transcript + translation + audio
 };
-
+*/
 
 /*
 export const processSignVideo = async (files, sourceLang = "en", targetLang = "fr") => {
@@ -86,6 +88,66 @@ export const processSignVideo = async (files, sourceLang = "en", targetLang = "f
     }
 };
 */
+
+
+export const processAudio = async (file, sourceLang, targetLang) => {
+  const formData = new FormData();
+  formData.append("file", file);
+  formData.append("source_lang", sourceLang);
+  formData.append("target_lang", targetLang);
+
+  const response = await fetch(`${API}/process_audio/`, {
+    method: "POST",
+    body: formData,
+  });
+
+  return await response.json();
+};
+
+export const processText = async (text, sourceLang, targetLang) => {
+  const formData = new FormData();
+  formData.append("text", text);
+  formData.append("source_lang", sourceLang);
+  formData.append("target_lang", targetLang);
+const response = await fetch(`${API}/process_text/`, {
+    method: "POST",
+    body: formData,
+  });
+
+  return await response.json();
+};
+
+
+export const processTTS = async (text, sourceLang = "en", targetLang = "en") => {
+  const formData = new FormData();
+  formData.append("text", text);
+  formData.append("source_lang", sourceLang);
+  formData.append("target_lang", targetLang);
+
+  const response = await fetch(`${API}/process_tts/`, {
+    method: "POST",
+    body: formData,
+  });
+
+  const blob = await response.blob();
+  return URL.createObjectURL(blob);
+};
+
+export const processSTS = async (file, sourceLang = "en", targetLang = "fr") => {
+  const formData = new FormData();
+  formData.append("file", file);
+  formData.append("source_lang", sourceLang);
+  formData.append("target_lang", targetLang);
+
+  const response = await fetch(`${API}/process_sts/`, {
+    method: "POST",
+    body: formData,
+  });
+
+  if (!response.ok) throw new Error("Failed to process STS");
+
+  return await response.json(); // ✅ return JSON with transcript + translation + audio
+};
 
 // --- Sign Language (Single Frame Prediction) ---
 export const predictSign = async (imageFile) => {
