@@ -1,17 +1,21 @@
 from fastapi.responses import FileResponse
 from fastapi import FastAPI, UploadFile, Form
 from fastapi.middleware.cors import CORSMiddleware
-from backend.services.deepgram_stt import transcribe_audio
+'''from backend.services.deepgram_stt import transcribe_audio
 from backend.services.translate import translate_text
 from backend.services.tts import text_to_speech
 from backend.services.sts import speech_to_speech
-from backend.services.slASL.inference import predict_sign
+from backend.services.slASL.inference import predict_sign'''
+from services.deepgram_stt import transcribe_audio
+from services.translate import translate_text
+from services.tts import text_to_speech
+from services.sts import speech_to_speech
+from services.slASL.inference import predict_sign
 import tempfile
-'from backend.services.sign_language.inference import predict_sign # <-- New import'
+#from backend.services.sign_language.inference import predict_sign # <-- New import'
 import shutil
 import os
 import base64
-import tempfile
 
 app = FastAPI()
 
