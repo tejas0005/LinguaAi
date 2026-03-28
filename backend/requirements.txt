@@ -6,3 +6,4 @@ mediapipe
 opencv-python
 numpy
 httpx
+gTTS
